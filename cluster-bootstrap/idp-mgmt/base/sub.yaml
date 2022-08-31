@@ -1,0 +1,17 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: idp-mgmt-operator-product
+  namespace: idp-mgmt-config
+  labels:
+    operators.coreos.com/idp-mgmt-operator-product.idp-mgmt-config: ''
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: idp-mgmt-operator-product
+  source: idp-mgmt-catalog
+  sourceNamespace: openshift-marketplace
+  startingCSV: idp-mgmt-operator-product.v0.4.0

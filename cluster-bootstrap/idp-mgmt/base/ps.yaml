@@ -1,0 +1,20 @@
+# ---
+# apiVersion: external-secrets.io/v1beta1
+# kind: ExternalSecret
+# metadata:
+#   name: multiclusterhub-operator-pull-secret
+#   namespace: multicluster-engine
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "1"
+# spec:
+#   refreshInterval: "15s"
+#   secretStoreRef:
+#     name: vault-backend
+#     kind: ClusterSecretStore
+#   target:
+#     name: multiclusterhub-operator-pull-secret
+#   data:
+#   - secretKey: .dockerconfigjson
+#     remoteRef:
+#       key: secret/multiclusterhub-operator-pull-secret
+#       property: .dockerconfigjson

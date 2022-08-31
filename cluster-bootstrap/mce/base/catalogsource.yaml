@@ -1,0 +1,15 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: multiclusterengine-catalog
+  namespace: openshift-marketplace
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+spec:
+  displayName: MultiCluster Engine
+  image: quay.io:443/acm-d/mce-custom-registry:v2.1.0-RC2
+  publisher: Red Hat
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 10m

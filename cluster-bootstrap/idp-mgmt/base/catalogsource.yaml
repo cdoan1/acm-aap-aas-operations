@@ -1,0 +1,15 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: idp-mgmt-catalog
+  namespace: openshift-marketplace
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+spec:
+  displayName: IDP Management Config
+  image: quay.io/cdoan_rh22/rh-operator-index-prune:v4.10
+  publisher: Chris Doan
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 10m

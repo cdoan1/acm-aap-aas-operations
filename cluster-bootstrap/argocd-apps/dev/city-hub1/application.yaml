@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    name: city-hub1
+    name: in-cluster
   project: default
   source:
     path: cluster-bootstrap/acm/overlay/city-hub1

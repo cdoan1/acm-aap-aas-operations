@@ -1,0 +1,18 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    installer.name: multiclusterhub
+    installer.namespace: open-cluster-management
+    operators.coreos.com/multicluster-engine.multicluster-engine: ""
+  name: multicluster-engine
+  namespace: multicluster-engine
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  channel: stable-2.1
+  config: {}
+  installPlanApproval: Automatic
+  name: multicluster-engine
+  source: multiclusterengine-catalog
+  sourceNamespace: openshift-marketplace
